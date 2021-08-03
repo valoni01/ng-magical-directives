@@ -1,0 +1,22 @@
+<h2>Our Story Books..</h2>
+
+<!-- Default teplate implementation -->
+<!-- if there are no variables, the template will use the default context -->
+<ng-container *ngTemplateOutlet="booksTemplate ? booksTemplate : defaultBooks; context:{$implicit:booklist}">
+
+</ng-container>
+
+
+<!-- default display for books if there is not template passed and also uses the default booklist if any list is not passed -->
+<ng-template let-books #defaultBooks>
+  <div *ngFor="let bk of books" class="books-card_default">
+    <h1>{{bk.name}}</h1>
+    <p>{{bk.author}}  - {{bk.year}}</p>
+ </div>
+</ng-template>
+
+
+
+<p>Pay us a visit whenever you want to</p>
+
+

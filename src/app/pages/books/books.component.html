@@ -1,0 +1,34 @@
+<!-- let-books represent the variable/data that is passed through the template view -->
+<ng-template let-books #cardView >
+   <div let *ngFor="let bk of books" class="books-card">
+      <h1>{{bk.name}}</h1>
+      <p>{{bk.author}}  - {{bk.year}}</p>
+   </div>
+</ng-template>
+
+<ng-template let-books #tableView >
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year</th>
+    </tr>
+    <tr *ngFor="let bk of books">
+      <td>{{bk.name}}</td>
+      <td>{{bk.author}}</td>
+      <td>{{bk.year}}</td>
+    </tr>
+  </table>
+</ng-template>
+
+
+<!-- Passing the data to be displayed to the template -->
+<!-- <app-books-view [booklist]='booklist'></app-books-view> -->
+
+
+<!-- This template will display the specified default template and default data -->
+<!-- <app-books-view></app-books-view> -->
+
+
+<!-- This allows you to use pass your custom template and also pass in the data.   -->
+<app-books-view [booklist]='booklist'  [booksTemplate]="tableView"></app-books-view>

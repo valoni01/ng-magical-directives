@@ -1,0 +1,15 @@
+<div id="myModal" >
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>
+        <ng-content select=".head"></ng-content></h2>
+    </div>
+    <div class="modal-body">
+      <p><ng-content select="p"></ng-content></p>
+    </div>
+    <div class="modal-footer">
+      <h3><ng-content select=".foot"></ng-content></h3>
+    </div>
+  </div>
+</div>
